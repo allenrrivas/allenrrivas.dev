@@ -1,41 +1,17 @@
-import { type AppType } from "next/dist/shared/lib/utils";
 import "../styles/globals.css";
+import type { AppProps } from "next/app";
 import Head from "next/head";
-import Navbar from "../components/Navbar";
-import Home from "../components/Home";
 
-// const MyApp: AppType<{ session: Session | null }> = ({
-//   Component,
-//   pageProps: { session, ...pageProps },
-// }) => {
-//   return (
-//     <>
-//       <Head>
-//         <title>Allen Rivas</title>
-//       </Head>
-//       <Home></Home>
-//       <Navbar></Navbar>
-//       <SessionProvider session={session}>
-//         <Component {...pageProps} />
-//       </SessionProvider>
-//     </>
-//   );
-// };
-
-// export default trpc.withTRPC(MyApp);
-
-const MyApp: AppType = ({ Component, pageProps }) => {
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-       <Head>
-         <title>Allen Rivas</title>
-       </Head>
-       <Home></Home>
-       <Navbar></Navbar>
+      <Head>
+        <title>Allen Rivas</title>
+        <meta name="description" content="Allen Rivas — software developer portfolio." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Component {...pageProps} />
     </>
-  
   );
-};
-
-export default MyApp;
+}
